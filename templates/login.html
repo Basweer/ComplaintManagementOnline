@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Student Complaint System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="login-page">
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Complaint System
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/login" class="active">Login</a>
+
+            <a href="/register">Register</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Login Section -->
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <!-- Header -->
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    🔐
+                </div>
+
+                <h1>Welcome Back</h1>
+
+                <p>
+                    Login to manage your complaints
+                </p>
+
+            </div>
+
+
+            <!-- Login Form -->
+
+            <form method="POST" class="login-form">
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>✉️</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Remember / Forgot -->
+
+                <div class="login-options">
+
+                    <label>
+
+                        <input type="checkbox">
+
+                        Remember me
+
+                    </label>
+
+                    <a href="#">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+
+                <!-- Login Button -->
+
+                <button type="submit" class="login-btn">
+
+                    Login
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- Error Message -->
+
+                {% if error %}
+
+                    <div class="login-error">
+                        ⚠️ {{ error }}
+                    </div>
+
+                {% endif %}
+
+
+            </form>
+
+
+            <!-- Register Link -->
+
+            <div class="register-link">
+
+                Don't have an account?
+
+                <a href="/register">
+                    Create an account
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="login-footer">
+
+        © 2026 Student Complaint Management System
+
+    </footer>
+
+</body>
+
+</html>

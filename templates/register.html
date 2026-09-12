@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Create Account | Student Complaint System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="register-page">
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Complaint System
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register" class="active">Register</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Register Section -->
+
+    <main class="register-container">
+
+        <div class="register-card">
+
+            <div class="register-header">
+
+                <div class="register-icon">
+                    👤
+                </div>
+
+                <h1>Create Account</h1>
+
+                <p>
+                    Register to submit and track your complaints
+                </p>
+
+            </div>
+
+
+            <!-- Registration Form -->
+
+            <form method="POST" class="register-form">
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>👤</span>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Email Address
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>✉️</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Password -->
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Create a password"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Terms -->
+
+                <div class="terms">
+
+                    <input type="checkbox" required>
+
+                    <span>
+                        I agree to the Terms & Conditions
+                    </span>
+
+                </div>
+
+
+                <!-- Register Button -->
+
+                <button type="submit" class="register-btn">
+
+                    Create Account
+
+                    <span>→</span>
+
+                </button>
+
+            </form>
+
+
+            <!-- Login Link -->
+
+            <div class="login-link">
+
+                Already have an account?
+
+                <a href="/login">
+                    Login here
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="register-footer">
+
+        © 2026 Student Complaint Management System
+
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,3425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #222;
+}
+
+/* Navigation Bar */
+
+.navbar {
+    background: #1e293b;
+    color: white;
+    padding: 18px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav-links a:hover {
+    color: #38bdf8;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #0f172a;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    margin: 5px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn:hover {
+    opacity: 0.85;
+}
+
+/* Footer */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #1e293b;
+    color: white;
+}
+/* ========================================
+   REGISTER PAGE
+======================================== */
+
+.register-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+}
+
+
+/* Register Container */
+
+.register-container {
+    min-height: calc(100vh - 75px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 20px;
+}
+
+
+/* Register Card */
+
+.register-card {
+    width: 100%;
+    max-width: 470px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.97);
+    border-radius: 20px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Header */
+
+.register-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.register-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dbeafe;
+    border-radius: 50%;
+
+    font-size: 32px;
+}
+
+
+.register-header h1 {
+    font-size: 30px;
+    color: #0f172a;
+    margin-bottom: 8px;
+}
+
+
+.register-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* Form */
+
+.register-form {
+    width: 100%;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* Input Box */
+
+.input-box {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    transition: 0.3s;
+}
+
+
+.input-box span {
+    padding-left: 15px;
+    font-size: 17px;
+}
+
+
+.input-box input {
+    width: 100%;
+
+    padding: 14px 12px;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+}
+
+
+.input-box:focus-within {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+
+    background: white;
+}
+
+
+/* Terms */
+
+.terms {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin: 5px 0 25px;
+
+    font-size: 13px;
+    color: #64748b;
+}
+
+
+.terms input {
+    width: 15px;
+    height: 15px;
+
+    accent-color: #2563eb;
+}
+
+
+/* Register Button */
+
+.register-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.3s;
+}
+
+
+.register-btn span {
+    font-size: 20px;
+}
+
+
+.register-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+
+/* Login Link */
+
+.login-link {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+.login-link a {
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+
+.register-footer {
+    text-align: center;
+
+    padding: 20px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .register-card {
+        padding: 30px 22px;
+    }
+
+    .register-header h1 {
+        font-size: 26px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+}
+
+/* ========================================
+   LOGIN PAGE
+======================================== */
+
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0f172a, #1e3a8a, #2563eb);
+}
+
+
+/* Login Container */
+
+.login-container {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 50px 20px;
+}
+
+
+/* Login Card */
+
+.login-card {
+    width: 100%;
+    max-width: 470px;
+
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.97);
+
+    border-radius: 20px;
+
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Header */
+
+.login-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+.login-icon {
+    width: 70px;
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #dbeafe;
+
+    border-radius: 50%;
+
+    font-size: 32px;
+}
+
+
+.login-header h1 {
+    font-size: 30px;
+
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+
+.login-header p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* Form */
+
+.login-form {
+    width: 100%;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* Input */
+
+.input-box {
+    display: flex;
+
+    align-items: center;
+
+    width: 100%;
+
+    border: 1px solid #cbd5e1;
+
+    border-radius: 10px;
+
+    background: #f8fafc;
+
+    transition: 0.3s;
+}
+
+
+.input-box span {
+    padding-left: 15px;
+
+    font-size: 17px;
+}
+
+
+.input-box input {
+    width: 100%;
+
+    padding: 14px 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    font-size: 14px;
+}
+
+
+.input-box:focus-within {
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+
+    background: white;
+}
+
+
+/* Login Options */
+
+.login-options {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin: 5px 0 25px;
+
+    font-size: 13px;
+
+    color: #64748b;
+}
+
+
+.login-options label {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+
+.login-options input {
+    width: 15px;
+    height: 15px;
+
+    accent-color: #2563eb;
+}
+
+
+.login-options a {
+    color: #2563eb;
+
+    text-decoration: none;
+
+    font-weight: 600;
+}
+
+
+.login-options a:hover {
+    text-decoration: underline;
+}
+
+
+/* Login Button */
+
+.login-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    transition: 0.3s;
+}
+
+
+.login-btn span {
+    font-size: 20px;
+}
+
+
+.login-btn:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 25px rgba(37, 99, 235, 0.35);
+}
+
+
+/* Register Link */
+
+.register-link {
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+.register-link a {
+    color: #2563eb;
+
+    font-weight: 600;
+
+    text-decoration: none;
+}
+
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* Footer */
+
+.login-footer {
+    text-align: center;
+
+    padding: 20px;
+
+    color: rgba(255, 255, 255, 0.8);
+
+    font-size: 13px;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-header h1 {
+        font-size: 26px;
+    }
+
+    .navbar {
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+/* Login Error Message */
+
+.login-error {
+    margin-top: 15px !important;
+    padding: 12px 15px !important;
+
+    background: #fff0f0 !important;
+    color: #ff0000 !important;
+
+    border: 1px solid #ff0000 !important;
+    border-radius: 8px !important;
+
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+@keyframes errorMessage {
+
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+/* Student DashBoard*/
+
+.dashboard-page {
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at top left, #dbeafe 0%, transparent 35%),
+        radial-gradient(circle at bottom right, #e0e7ff 0%, transparent 35%),
+        #f1f5f9;
+
+    color: #0f172a;
+}
+
+
+/* ========================================
+   NAVIGATION BAR
+======================================== */
+
+.dashboard-navbar {
+    width: 100%;
+
+    padding: 18px 55px;
+
+    background: linear-gradient(
+        135deg,
+        #0f172a,
+        #1e3a8a
+    );
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    box-shadow:
+        0 5px 20px rgba(15, 23, 42, 0.2);
+}
+
+
+.dashboard-logo {
+    font-size: 21px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+
+.dashboard-user {
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    font-size: 14px;
+}
+
+
+/* Logout */
+
+.logout-btn {
+    padding: 9px 18px;
+
+    background: #ef4444;
+
+    color: white !important;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+
+.logout-btn:hover {
+    background: #dc2626;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(239, 68, 68, 0.3);
+}
+
+
+/* ========================================
+   MAIN DASHBOARD
+======================================== */
+
+.dashboard-container {
+    max-width: 1150px;
+
+    margin: auto;
+
+    padding: 55px 25px;
+}
+
+
+/* ========================================
+   WELCOME SECTION
+======================================== */
+
+.dashboard-welcome {
+    text-align: center;
+
+    margin-bottom: 45px;
+}
+
+
+.dashboard-welcome h1 {
+    font-size: 38px;
+
+    color: #0f172a;
+
+    margin-bottom: 10px;
+
+    font-weight: 800;
+}
+
+
+.dashboard-welcome p {
+    color: #64748b;
+
+    font-size: 16px;
+}
+
+
+/* ========================================
+   STATISTICS
+======================================== */
+
+.stats-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 50px;
+}
+
+
+.stat-card {
+    background: rgba(255, 255, 255, 0.95);
+
+    padding: 25px;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.stat-card:hover {
+    transform: translateY(-7px);
+
+    box-shadow:
+        0 18px 35px rgba(15, 23, 42, 0.14);
+}
+
+
+/* Icons */
+
+.stat-icon {
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #dbeafe,
+            #bfdbfe
+        );
+
+    font-size: 30px;
+
+    flex-shrink: 0;
+}
+
+
+.stat-card:nth-child(2) .stat-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #fef3c7,
+            #fde68a
+        );
+}
+
+
+.stat-card:nth-child(3) .stat-icon {
+
+    background:
+        linear-gradient(
+            135deg,
+            #dcfce7,
+            #bbf7d0
+        );
+}
+
+
+/* Numbers */
+
+.stat-card h3 {
+    font-size: 30px;
+
+    color: #0f172a;
+
+    margin-bottom: 3px;
+}
+
+
+.stat-card p {
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   QUICK ACTIONS
+======================================== */
+
+.dashboard-actions {
+    max-width: 900px;
+
+    margin: auto;
+}
+
+
+.dashboard-actions h2 {
+    text-align: center;
+
+    font-size: 27px;
+
+    color: #0f172a;
+
+    margin-bottom: 25px;
+}
+
+
+.action-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+
+/* Action Cards */
+
+.action-card {
+    position: relative;
+
+    overflow: hidden;
+
+    background: white;
+
+    padding: 32px;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    color: #0f172a;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.action-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+}
+
+
+.action-card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow:
+        0 20px 40px rgba(15, 23, 42, 0.15);
+}
+
+
+.action-card span {
+
+    display: block;
+
+    width: 65px;
+
+    height: 65px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 16px;
+
+    font-size: 32px;
+
+    margin-bottom: 18px;
+}
+
+
+.action-card h3 {
+
+    font-size: 21px;
+
+    margin-bottom: 7px;
+
+    color: #0f172a;
+}
+
+
+.action-card p {
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.dashboard-footer {
+
+    text-align: center;
+
+    padding: 22px;
+
+    background: #0f172a;
+
+    color: #cbd5e1;
+
+    font-size: 13px;
+
+    margin-top: 20px;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 750px) {
+
+    .dashboard-navbar {
+
+        padding: 15px 20px;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    .dashboard-user {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+
+    .dashboard-container {
+
+        padding: 35px 15px;
+
+    }
+
+
+    .dashboard-welcome h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .stats-container {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .action-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+/* ========================================
+   RESPONSIVE WEBSITE
+   Desktop + Tablet + Mobile
+======================================== */
+
+/* Prevent horizontal scrolling */
+html,
+body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Make images responsive */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   TABLET RESPONSIVE CSS
+   Resolution: 769px - 1024px
+   ========================================================= */
+
+@media (min-width: 769px) and (max-width: 1024px) {
+
+    /* =====================================================
+       GLOBAL
+       ===================================================== */
+
+    html,
+    body {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+
+    /* =====================================================
+       NAVIGATION BAR
+       ===================================================== */
+
+    .navbar {
+        padding: 16px 30px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        gap: 18px;
+    }
+
+    .nav-links a {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       HERO SECTION
+       ===================================================== */
+
+    .hero {
+        min-height: 75vh;
+        padding: 40px 30px;
+    }
+
+    .hero-content {
+        max-width: 650px;
+    }
+
+    .hero h1 {
+        font-size: 42px;
+        margin-bottom: 18px;
+    }
+
+    .hero p {
+        font-size: 17px;
+        margin-bottom: 28px;
+    }
+
+
+    /* =====================================================
+       BUTTONS
+       ===================================================== */
+
+    .btn {
+        padding: 11px 22px;
+    }
+
+
+    /* =====================================================
+       REGISTER PAGE
+       ===================================================== */
+
+    .register-container {
+        min-height: calc(100vh - 70px);
+        padding: 40px 30px;
+    }
+
+    .register-card {
+        max-width: 450px;
+        padding: 35px;
+    }
+
+    .register-header {
+        margin-bottom: 28px;
+    }
+
+    .register-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+
+    .register-header h1 {
+        font-size: 28px;
+    }
+
+
+    /* =====================================================
+       LOGIN PAGE
+       ===================================================== */
+
+    .login-container {
+        min-height: calc(100vh - 70px);
+        padding: 40px 30px;
+    }
+
+    .login-card {
+        max-width: 450px;
+        padding: 35px;
+    }
+
+    .login-header {
+        margin-bottom: 28px;
+    }
+
+    .login-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+
+    .login-header h1 {
+        font-size: 28px;
+    }
+
+
+    /* =====================================================
+       DASHBOARD NAVBAR
+       ===================================================== */
+
+    .dashboard-navbar {
+        padding: 16px 30px;
+    }
+
+    .dashboard-logo {
+        font-size: 20px;
+    }
+
+    .dashboard-user {
+        gap: 14px;
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       DASHBOARD CONTAINER
+       ===================================================== */
+
+    .dashboard-container {
+        width: 100%;
+        max-width: 1100px;
+        padding: 40px 25px;
+    }
+
+
+    /* =====================================================
+       DASHBOARD WELCOME
+       ===================================================== */
+
+    .dashboard-welcome {
+        margin-bottom: 35px;
+    }
+
+    .dashboard-welcome h1 {
+        font-size: 34px;
+        line-height: 1.3;
+    }
+
+    .dashboard-welcome p {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+
+    /* =====================================================
+       STUDENT STATISTICS
+       ===================================================== */
+
+    .stats-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-bottom: 40px;
+    }
+
+    .stat-card {
+        padding: 20px;
+        gap: 14px;
+    }
+
+    .stat-icon {
+        width: 58px;
+        height: 58px;
+        font-size: 27px;
+    }
+
+    .stat-card h3 {
+        font-size: 27px;
+    }
+
+    .stat-card p {
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       ADMIN STATISTICS
+       ===================================================== */
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+        margin-bottom: 35px;
+    }
+
+
+    /* =====================================================
+       QUICK ACTIONS
+       ===================================================== */
+
+    .dashboard-actions {
+        max-width: 900px;
+    }
+
+    .dashboard-actions h2 {
+        font-size: 25px;
+        margin-bottom: 22px;
+    }
+
+    .action-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px;
+    }
+
+    .action-card {
+        padding: 27px;
+    }
+
+    .action-card span {
+        width: 60px;
+        height: 60px;
+        font-size: 29px;
+        margin-bottom: 16px;
+    }
+
+    .action-card h3 {
+        font-size: 20px;
+    }
+
+    .action-card p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .action-icon {
+        font-size: 36px;
+    }
+
+
+    /* =====================================================
+       ADMIN DASHBOARD HEADER
+       ===================================================== */
+
+    .dashboard-header {
+        margin-bottom: 25px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 30px;
+    }
+
+    .dashboard-header p {
+        font-size: 15px;
+    }
+
+
+    /* =====================================================
+       ADMIN ACTIONS
+       ===================================================== */
+
+    .admin-actions h2 {
+        font-size: 25px;
+        margin-bottom: 18px;
+    }
+
+
+    /* =====================================================
+       LOGOUT BUTTON
+       ===================================================== */
+
+    .logout-btn {
+        padding: 9px 15px !important;
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       MY COMPLAINTS
+       ===================================================== */
+
+    .complaints-container {
+        max-width: 900px;
+        padding: 40px 25px;
+    }
+
+    .complaints-title {
+        margin-bottom: 30px;
+    }
+
+    .complaints-title-icon {
+        width: 65px;
+        height: 65px;
+        font-size: 30px;
+    }
+
+    .complaints-title h1 {
+        font-size: 31px;
+    }
+
+    .complaints-title p {
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       COMPLAINT CARD
+       ===================================================== */
+
+    .complaint-item {
+        padding: 25px;
+    }
+
+    .complaint-item-header {
+        gap: 15px;
+        margin-bottom: 18px;
+    }
+
+    .complaint-item-header h2 {
+        font-size: 20px;
+    }
+
+    .complaint-details {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+
+    /* =====================================================
+       ADMIN COMPLAINT FILTER
+       ===================================================== */
+
+    .filter-card {
+        padding: 22px;
+    }
+
+    .filter-form {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 12px;
+    }
+
+    .filter-buttons {
+        grid-column: span 3;
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-btn,
+    .reset-btn {
+        padding: 10px 15px;
+    }
+
+
+    /* =====================================================
+       ADMIN COMPLAINT CARD
+       ===================================================== */
+
+    .complaint-card {
+        padding: 22px;
+    }
+
+    .complaint-header {
+        gap: 15px;
+    }
+
+    .complaint-header h2 {
+        font-size: 21px;
+    }
+
+    .complaint-info {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .description-box {
+        padding: 16px;
+    }
+
+
+    /* =====================================================
+       STATUS SECTION
+       ===================================================== */
+
+    .status-section {
+        margin-top: 18px;
+        padding-top: 16px;
+    }
+
+    .status-form {
+        display: flex;
+        gap: 10px;
+    }
+
+    .status-form select {
+        padding: 10px 12px;
+        min-width: 180px;
+    }
+
+    .status-form button {
+        padding: 10px 17px;
+    }
+
+
+    /* =====================================================
+       STUDENT MY COMPLAINT FILTER
+       ===================================================== */
+
+    .student-filter-card {
+        padding: 22px;
+    }
+
+    .student-filter-form {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 12px;
+    }
+
+    .student-filter-buttons {
+        grid-column: span 3;
+        display: flex;
+        gap: 10px;
+    }
+
+
+    /* =====================================================
+       STUDENT COMPLAINT CARD
+       ===================================================== */
+
+    .student-complaint-card {
+        padding: 22px;
+    }
+
+    .student-complaint-top {
+        gap: 15px;
+        margin-bottom: 18px;
+    }
+
+    .student-complaint-top h2 {
+        font-size: 21px;
+    }
+
+    .student-complaint-details {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .student-detail {
+        padding: 13px;
+    }
+
+
+    /* =====================================================
+       STUDENT MANAGEMENT
+       ===================================================== */
+
+    .student-management-filter {
+        padding: 20px;
+    }
+
+    .student-management-search {
+        display: flex;
+        gap: 10px;
+    }
+
+    .student-management-search input {
+        padding: 11px 13px;
+    }
+
+    .student-management-search button {
+        padding: 11px 18px;
+    }
+
+    .student-management-search a {
+        padding: 11px 17px;
+    }
+
+
+    /* =====================================================
+       STUDENT TABLE
+       ===================================================== */
+
+    .student-table-wrapper {
+        overflow-x: auto;
+    }
+
+    .student-table {
+        min-width: 700px;
+    }
+
+    .student-table th {
+        padding: 14px;
+        font-size: 12px;
+    }
+
+    .student-table td {
+        padding: 15px 14px;
+        font-size: 13px;
+    }
+
+    .student-avatar {
+        width: 36px;
+        height: 36px;
+    }
+
+
+    /* =====================================================
+       FOOTERS
+       ===================================================== */
+
+    footer {
+        padding: 18px;
+    }
+
+    .register-footer,
+    .login-footer,
+    .dashboard-footer {
+        padding: 20px;
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       ERROR MESSAGE
+       ===================================================== */
+
+    .login-error {
+        margin-top: 14px !important;
+        padding: 11px 14px !important;
+        font-size: 13px;
+    }
+
+}
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 600px) {
+
+    /* Navbar */
+
+    .dashboard-navbar {
+        padding: 15px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 12px;
+
+        text-align: center;
+    }
+
+
+    .dashboard-logo {
+        font-size: 18px;
+    }
+
+
+    .dashboard-user {
+        width: 100%;
+
+        display: flex;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        flex-wrap: wrap;
+    }
+
+
+    /* Dashboard */
+
+    .dashboard-container {
+        width: 100%;
+
+        padding: 30px 15px;
+    }
+
+
+    .dashboard-welcome {
+        margin-bottom: 30px;
+    }
+
+
+    .dashboard-welcome h1 {
+        font-size: 26px;
+
+        line-height: 1.3;
+    }
+
+
+    .dashboard-welcome p {
+        font-size: 14px;
+
+        line-height: 1.6;
+    }
+
+
+    /* Statistics */
+
+    .stats-container {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .stat-card {
+        width: 100%;
+
+        padding: 20px;
+    }
+
+
+    .stat-icon {
+        width: 55px;
+
+        height: 55px;
+
+        font-size: 25px;
+    }
+
+
+    .stat-card h3 {
+        font-size: 25px;
+    }
+
+
+    /* Quick Actions */
+
+    .dashboard-actions h2 {
+        font-size: 23px;
+    }
+
+
+    .action-grid {
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+
+    .action-card {
+        width: 100%;
+
+        padding: 25px;
+    }
+
+
+    /* Footer */
+
+    .dashboard-footer {
+        font-size: 12px;
+
+        padding: 18px 10px;
+    }
+
+}
+
+
+/* ==============================
+   SMALL MOBILE
+============================== */
+
+@media (max-width: 400px) {
+
+    .dashboard-logo {
+        font-size: 16px;
+    }
+
+
+    .dashboard-welcome h1 {
+        font-size: 23px;
+    }
+
+
+    .action-card h3 {
+        font-size: 18px;
+    }
+
+
+    .logout-btn,
+    .back-btn {
+        padding: 8px 12px;
+
+        font-size: 12px;
+    }
+
+}
+/* ========================================
+   MY COMPLAINTS PAGE
+======================================== */
+
+.my-complaints-page {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            #dbeafe,
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            #e0e7ff,
+            transparent 35%
+        ),
+        #f1f5f9;
+}
+
+
+.complaints-container {
+    width: 100%;
+
+    max-width: 950px;
+
+    margin: 0 auto;
+
+    padding: 50px 20px;
+}
+
+
+/* Page Header */
+
+.complaints-title {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+
+.complaints-title-icon {
+    width: 70px;
+
+    height: 70px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #dbeafe;
+
+    border-radius: 20px;
+
+    font-size: 32px;
+}
+
+
+.complaints-title h1 {
+    font-size: 34px;
+
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+
+.complaints-title p {
+    color: #64748b;
+
+    font-size: 15px;
+}
+
+
+/* Complaint List */
+
+.complaints-list {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+
+/* Complaint Card */
+
+.complaint-item {
+    background: white;
+
+    padding: 28px;
+
+    border-radius: 18px;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+
+    transition: 0.3s;
+}
+
+
+.complaint-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.13);
+}
+
+
+/* Header */
+
+.complaint-item-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+
+    margin-bottom: 20px;
+}
+
+
+.complaint-item-header h2 {
+    color: #0f172a;
+
+    font-size: 21px;
+
+    margin-bottom: 8px;
+}
+
+
+.complaint-date {
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+/* Status */
+
+.status-badge {
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+
+.status-badge.pending {
+    background: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.status-badge.resolved {
+    background: #dcfce7;
+
+    color: #166534;
+}
+
+
+.status-badge.rejected {
+    background: #fee2e2;
+
+    color: #991b1b;
+}
+
+
+/* Details */
+
+.complaint-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+}
+
+
+.detail-box {
+    padding: 15px;
+
+    background: #f8fafc;
+
+    border-radius: 12px;
+
+    border: 1px solid #e2e8f0;
+}
+
+
+.detail-box span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 5px;
+}
+
+
+.detail-box strong {
+    color: #0f172a;
+
+    font-size: 14px;
+}
+
+
+/* Description */
+
+.complaint-description {
+    padding-top: 18px;
+
+    border-top: 1px solid #e2e8f0;
+}
+
+
+.complaint-description h3 {
+    color: #334155;
+
+    font-size: 14px;
+
+    margin-bottom: 8px;
+}
+
+
+.complaint-description p {
+    color: #64748b;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* No Complaints */
+
+.no-complaints {
+    background: white;
+
+    padding: 60px 25px;
+
+    border-radius: 20px;
+
+    text-align: center;
+
+    box-shadow:
+        0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+
+.no-complaints-icon {
+    font-size: 55px;
+
+    margin-bottom: 15px;
+}
+
+
+.no-complaints h2 {
+    color: #0f172a;
+
+    margin-bottom: 8px;
+}
+
+
+.no-complaints p {
+    color: #64748b;
+
+    margin-bottom: 25px;
+}
+
+
+/* No complaint button */
+
+.no-complaints .complaint-submit-btn {
+    display: inline-flex;
+
+    width: auto;
+
+    padding: 13px 22px;
+
+    text-decoration: none;
+}
+
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .complaints-container {
+        padding: 30px 15px;
+    }
+
+
+    .complaints-title h1 {
+        font-size: 27px;
+    }
+
+
+    .complaint-item {
+        padding: 20px;
+    }
+
+
+    .complaint-item-header {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .complaint-details {
+        grid-template-columns: 1fr;
+    }
+
+
+    .status-badge {
+        align-self: flex-start;
+    }
+
+}
+/* ============================= */
+/* ADMIN DASHBOARD */
+/* ============================= */
+
+.dashboard-page {
+    min-height: 100vh;
+    background: #f4f7fb;
+}
+
+.dashboard-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 20px;
+}
+
+.dashboard-header {
+    margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+    font-size: 32px;
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.dashboard-header p {
+    color: #64748b;
+}
+
+
+/* Statistics */
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+
+    transition: 0.3s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.stat-icon {
+    font-size: 35px;
+}
+
+.stat-card h3 {
+    font-size: 30px;
+    margin: 0;
+    color: #172033;
+}
+
+.stat-card p {
+    margin-top: 5px;
+    color: #64748b;
+}
+
+
+/* Admin Actions */
+
+.admin-actions h2 {
+    margin-bottom: 20px;
+    color: #172033;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.action-card {
+    background: white;
+    padding: 30px;
+    border-radius: 18px;
+
+    text-decoration: none;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+
+    transition: 0.3s;
+}
+
+.action-card:hover {
+    transform: translateY(-5px);
+}
+
+.action-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.action-card h3 {
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.action-card p {
+    color: #64748b;
+    line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 800px) {
+
+    .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .dashboard-container {
+        padding: 30px 15px;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dashboard-header h1 {
+        font-size: 26px;
+    }
+
+}
+.status-section {
+    margin-top: 20px;
+    padding-top: 18px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.status-badge {
+    display: inline-block;
+    margin-left: 8px;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: #fef3c7;
+    color: #92400e;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.status-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.status-form select {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+}
+
+.status-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-form button:hover {
+    background: #1d4ed8;
+}
+
+@media (max-width: 500px) {
+
+    .status-form {
+        flex-direction: column;
+    }
+
+    .status-form select,
+    .status-form button {
+        width: 100%;
+    }
+}
+.logout-btn {
+    background: #dc2626 !important;
+    color: white !important;
+    padding: 9px 16px !important;
+    border-radius: 8px;
+}
+
+.logout-btn:hover {
+    background: #b91c1c !important;
+}
+/* =========================================================
+   ADMIN COMPLAINT SEARCH & FILTERS
+   ========================================================= */
+
+.filter-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.filter-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.filter-group label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.filter-group input,
+.filter-group select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    background: white;
+    color: #172033;
+    font-size: 14px;
+    outline: none;
+}
+
+.filter-group input:focus,
+.filter-group select:focus {
+    border-color: #2563eb;
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.search-btn,
+.reset-btn {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.search-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.search-btn:hover {
+    background: #1d4ed8;
+}
+
+.reset-btn {
+    background: #e5e7eb;
+    color: #374151;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reset-btn:hover {
+    background: #d1d5db;
+}
+
+.result-info {
+    margin-bottom: 18px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.result-info strong {
+    color: #172033;
+}
+
+
+/* =========================================================
+   COMPLAINT CARD
+   ========================================================= */
+
+.complaint-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.complaint-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.complaint-header h2 {
+    margin-top: 6px;
+    color: #172033;
+    font-size: 22px;
+}
+
+.complaint-number {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.complaint-info {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.complaint-info p {
+    margin: 0;
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.description-box {
+    background: #f8fafc;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 20px;
+}
+
+.description-box strong {
+    color: #172033;
+}
+
+.description-box p {
+    margin-top: 8px;
+    color: #475569;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.status-badge {
+    display: inline-block;
+    padding: 7px 13px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.status-badge.pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.status-badge.progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.status-badge.resolved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+/* =========================================================
+   STATUS UPDATE
+   ========================================================= */
+
+.status-section {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 18px;
+}
+
+.status-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+}
+
+.status-form select {
+    padding: 10px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    background: white;
+}
+
+.status-form button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.status-form button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   NO COMPLAINTS
+   ========================================================= */
+
+.no-complaints {
+    background: white;
+    padding: 60px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.no-complaints-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.no-complaints h2 {
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.no-complaints p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .filter-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .filter-buttons {
+        grid-column: span 2;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .filter-buttons {
+        grid-column: span 1;
+    }
+
+    .filter-buttons .search-btn,
+    .filter-buttons .reset-btn {
+        flex: 1;
+    }
+
+    .complaint-info {
+        grid-template-columns: 1fr;
+    }
+
+    .complaint-header {
+        flex-direction: column;
+    }
+
+    .status-form {
+        flex-direction: column;
+    }
+
+    .status-form select,
+    .status-form button {
+        width: 100%;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .filter-card {
+        padding: 18px;
+    }
+
+    .complaint-card {
+        padding: 18px;
+    }
+
+    .complaint-header h2 {
+        font-size: 19px;
+    }
+
+}
+/* =========================================================
+   STUDENT MY COMPLAINTS
+   ========================================================= */
+
+.student-filter-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 22px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.student-filter-form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 15px;
+    align-items: end;
+}
+
+.student-filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.student-filter-group label {
+    color: #374151;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.student-filter-group input,
+.student-filter-group select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    background: white;
+    color: #172033;
+    font-size: 14px;
+    outline: none;
+}
+
+.student-filter-group input:focus,
+.student-filter-group select:focus {
+    border-color: #2563eb;
+}
+
+.student-filter-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.student-search-btn,
+.student-reset-btn {
+    border: none;
+    padding: 11px 16px;
+    border-radius: 9px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.student-search-btn {
+    background: #2563eb;
+    color: white;
+}
+
+.student-search-btn:hover {
+    background: #1d4ed8;
+}
+
+.student-reset-btn {
+    background: #e5e7eb;
+    color: #374151;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.student-reset-btn:hover {
+    background: #d1d5db;
+}
+
+
+/* =========================================================
+   RESULT COUNT
+   ========================================================= */
+
+.student-result-info {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.student-result-info strong {
+    color: #172033;
+}
+
+
+/* =========================================================
+   COMPLAINT CARD
+   ========================================================= */
+
+.student-complaint-card {
+    background: white;
+    padding: 25px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    transition: 0.25s ease;
+}
+
+.student-complaint-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09);
+}
+
+
+/* =========================================================
+   COMPLAINT HEADER
+   ========================================================= */
+
+.student-complaint-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.student-complaint-number {
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.student-complaint-top h2 {
+    margin-top: 6px;
+    color: #172033;
+    font-size: 22px;
+}
+
+
+/* =========================================================
+   STATUS BADGES
+   ========================================================= */
+
+.student-status-badge {
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.student-pending {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.student-progress {
+    background: #dbeafe;
+    color: #1e40af;
+}
+
+.student-resolved {
+    background: #dcfce7;
+    color: #166534;
+}
+
+
+/* =========================================================
+   COMPLAINT DETAILS
+   ========================================================= */
+
+.student-complaint-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.student-detail {
+    background: #f8fafc;
+    padding: 14px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-label {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.student-detail strong {
+    color: #172033;
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   PRIORITY COLORS
+   ========================================================= */
+
+.priority-high {
+    color: #dc2626 !important;
+}
+
+.priority-medium {
+    color: #d97706 !important;
+}
+
+.priority-low {
+    color: #16a34a !important;
+}
+
+
+/* =========================================================
+   DESCRIPTION
+   ========================================================= */
+
+.student-description {
+    background: #f8fafc;
+    padding: 18px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.student-description > span {
+    color: #172033;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.student-description p {
+    color: #475569;
+    line-height: 1.7;
+    margin-top: 8px;
+    white-space: pre-wrap;
+}
+
+
+/* =========================================================
+   STATUS MESSAGE
+   ========================================================= */
+
+.student-status-message {
+    border-top: 1px solid #e5e7eb;
+    padding-top: 15px;
+    color: #64748b;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   NO COMPLAINTS
+   ========================================================= */
+
+.student-no-complaints {
+    background: white;
+    padding: 60px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.student-no-icon {
+    font-size: 55px;
+    margin-bottom: 15px;
+}
+
+.student-no-complaints h2 {
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.student-no-complaints p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.student-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 11px 18px;
+    background: #2563eb;
+    color: white;
+    border-radius: 9px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.student-submit-btn:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================================================
+   MOBILE RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+    .student-filter-form {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .student-filter-buttons {
+        grid-column: span 2;
+    }
+
+}
+
+
+@media (max-width: 650px) {
+
+    .student-filter-form {
+        grid-template-columns: 1fr;
+    }
+
+    .student-filter-buttons {
+        grid-column: span 1;
+    }
+
+    .student-filter-buttons .student-search-btn,
+    .student-filter-buttons .student-reset-btn {
+        flex: 1;
+    }
+
+    .student-complaint-top {
+        flex-direction: column;
+    }
+
+    .student-complaint-details {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .student-filter-card {
+        padding: 18px;
+    }
+
+    .student-complaint-card {
+        padding: 18px;
+    }
+
+    .student-complaint-top h2 {
+        font-size: 19px;
+    }
+
+}
+/* =========================================================
+   ADMIN STUDENT MANAGEMENT
+   ========================================================= */
+
+.student-management-filter {
+    background: white;
+    padding: 22px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.student-management-search {
+    display: flex;
+    gap: 10px;
+}
+
+.student-management-search input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 1px solid #d1d5db;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+}
+
+.student-management-search input:focus {
+    border-color: #2563eb;
+}
+
+.student-management-search button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 9px;
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.student-management-search button:hover {
+    background: #1d4ed8;
+}
+
+.student-management-search a {
+    padding: 12px 18px;
+    border-radius: 9px;
+    background: #e5e7eb;
+    color: #374151;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   STUDENT COUNT
+   ========================================================= */
+
+.student-management-count {
+    color: #64748b;
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.student-management-count strong {
+    color: #172033;
+}
+
+
+/* =========================================================
+   STUDENT TABLE
+   ========================================================= */
+
+.student-table-wrapper {
+    background: white;
+    border-radius: 18px;
+    overflow-x: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 750px;
+}
+
+.student-table th {
+    background: #f8fafc;
+    padding: 16px;
+    text-align: left;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.student-table td {
+    padding: 17px 16px;
+    border-top: 1px solid #e5e7eb;
+    color: #475569;
+    font-size: 14px;
+}
+
+.student-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+
+/* =========================================================
+   STUDENT NAME
+   ========================================================= */
+
+.student-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.student-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: #dbeafe;
+    color: #1d4ed8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   COMPLAINT COUNT
+   ========================================================= */
+
+.complaint-count {
+    display: inline-flex;
+    min-width: 32px;
+    height: 30px;
+    padding: 0 9px;
+    align-items: center;
+    justify-content: center;
+    background: #dbeafe;
+    color: #1e40af;
+    border-radius: 15px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   VIEW COMPLAINTS BUTTON
+   ========================================================= */
+
+.view-complaints-btn {
+    display: inline-block;
+    padding: 9px 13px;
+    border-radius: 8px;
+    background: #eff6ff;
+    color: #1d4ed8;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.view-complaints-btn:hover {
+    background: #dbeafe;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.student-management-empty {
+    background: white;
+    padding: 60px 20px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+}
+
+.student-management-empty > div {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.student-management-empty h2 {
+    color: #172033;
+    margin-bottom: 8px;
+}
+
+.student-management-empty p {
+    color: #64748b;
+    margin-bottom: 20px;
+}
+
+.student-management-empty a {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .student-management-search {
+        flex-direction: column;
+    }
+
+    .student-management-search button,
+    .student-management-search a {
+        text-align: center;
+    }
+
+    .student-table-wrapper {
+        overflow-x: visible;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .student-table {
+        min-width: 0;
+    }
+
+    .student-table thead {
+        display: none;
+    }
+
+    .student-table,
+    .student-table tbody,
+    .student-table tr,
+    .student-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .student-table tr {
+        background: white;
+        margin-bottom: 15px;
+        padding: 12px;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    .student-table td {
+        border: none;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        text-align: right;
+    }
+
+    .student-table td::before {
+        content: attr(data-label);
+        font-weight: 700;
+        color: #64748b;
+        text-align: left;
+    }
+
+    .student-table td[data-label="Student"] {
+        align-items: center;
+    }
+
+    .student-name {
+        justify-content: flex-end;
+    }
+
+    .view-complaints-btn {
+        margin-left: auto;
+    }
+
+}
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="dashboard-page">
+
+
+    <nav class="navbar">
+
+    <div class="logo">
+        🛡️ Admin Panel
+    </div>
+
+    <div class="nav-links">
+
+        <a href="/admin-dashboard" class="active">
+            Dashboard
+        </a>
+
+        <a href="/admin-complaints">
+            Complaints
+        </a>
+
+        <a href="/">
+            Home
+        </a>
+
+        <a href="/admin-logout" class="logout-btn">
+            🚪 Logout
+        </a>
+
+    </div>
+
+</nav>
+
+    <main class="dashboard-container">
+
+        <div class="dashboard-header">
+
+            <div>
+
+                <h1>Admin Dashboard</h1>
+
+                <p>
+                    Manage and monitor student complaints
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="stats-grid">
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📋
+                </div>
+
+                <div>
+
+                    <h3>
+                        {{ total_complaints }}
+                    </h3>
+
+                    <p>Total Complaints</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🟡
+                </div>
+
+                <div>
+
+                    <h3>
+                        {{ pending_complaints }}
+                    </h3>
+
+                    <p>Pending</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🔵
+                </div>
+
+                <div>
+
+                    <h3>
+                        {{ in_progress_complaints }}
+                    </h3>
+
+                    <p>In Progress</p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    🟢
+                </div>
+
+                <div>
+
+                    <h3>
+                        {{ resolved_complaints }}
+                    </h3>
+
+                    <p>Resolved</p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Admin Actions -->
+
+        <div class="admin-actions">
+
+            <h2>Complaint Management</h2>
+
+            <div class="action-grid">
+
+                <a href="/admin-complaints"
+                   class="action-card">
+
+                    <div class="action-icon">
+                        📋
+                    </div>
+
+                    <h3>
+                        View All Complaints
+                    </h3>
+
+                    <p>
+                        View and manage complaints submitted by students.
+                    </p>
+
+                </a>
+
+
+                <a href="/admin-logout"
+                   class="action-card">
+
+                    <div class="action-icon">
+                        🚪
+                    </div>
+
+                    <h3>
+                        Logout
+                    </h3>
+
+                    <p>
+                        Securely logout from the admin panel.
+                    </p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="login-footer">
+
+        © 2026 Student Complaint Management System
+
+    </footer>
+
+<a href="/admin-students" class="action-card">
+
+    <div class="action-icon">
+        👥
+    </div>
+
+    <h3>
+        Student Management
+    </h3>
+
+    <p>
+        View registered students and their complaint activity.
+    </p>
+
+</a>
+</body>
+
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Login | Student Complaint System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="login-page">
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Complaint System
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/">Home</a>
+
+            <a href="/login">Student Login</a>
+
+        </div>
+
+    </nav>
+
+
+    <main class="login-container">
+
+        <div class="login-card">
+
+            <div class="login-header">
+
+                <div class="login-icon">
+                    🛡️
+                </div>
+
+                <h1>Admin Login</h1>
+
+                <p>
+                    Login to manage student complaints
+                </p>
+
+            </div>
+
+
+            <form method="POST"
+                  class="login-form">
+
+                <div class="form-group">
+
+                    <label for="email">
+                        Admin Email
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>✉️</span>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter admin email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="password">
+                        Password
+                    </label>
+
+                    <div class="input-box">
+
+                        <span>🔒</span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter admin password"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <button type="submit"
+                        class="login-btn">
+
+                    Admin Login
+                    <span>→</span>
+
+                </button>
+
+
+                {% if error %}
+
+                <div class="login-error">
+
+                    {{ error }}
+
+                </div>
+
+                {% endif %}
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <footer class="login-footer">
+
+        © 2026 Student Complaint Management System
+
+    </footer>
+
+</body>
+
+</html>

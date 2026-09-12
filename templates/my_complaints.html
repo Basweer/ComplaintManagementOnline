@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>My Complaints</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🎓 Student Portal
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/dashboard">
+                Dashboard
+            </a>
+
+            <a href="/submit-complaint">
+                Submit Complaint
+            </a>
+
+            <a href="/my-complaints"
+               class="active">
+                My Complaints
+            </a>
+
+            <a href="/logout"
+               class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- PAGE HEADER -->
+
+        <div class="dashboard-header">
+
+            <h1>
+                My Complaints
+            </h1>
+
+            <p>
+                Track and manage the complaints you have submitted.
+            </p>
+
+        </div>
+
+
+        <!-- =================================================
+             SEARCH & FILTER
+             ================================================= -->
+
+        <div class="student-filter-card">
+
+            <form method="GET"
+                  action="/my-complaints"
+                  class="student-filter-form">
+
+
+                <!-- SEARCH -->
+
+                <div class="student-filter-group">
+
+                    <label>
+                        Search Complaints
+                    </label>
+
+                    <input
+                        type="text"
+                        name="search"
+                        value="{{ search }}"
+                        placeholder="Search by title or description"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="student-filter-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select name="status">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="Pending"
+                            {% if status == "Pending" %}
+                            selected
+                            {% endif %}>
+                            Pending
+                        </option>
+
+                        <option value="In Progress"
+                            {% if status == "In Progress" %}
+                            selected
+                            {% endif %}>
+                            In Progress
+                        </option>
+
+                        <option value="Resolved"
+                            {% if status == "Resolved" %}
+                            selected
+                            {% endif %}>
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="student-filter-group">
+
+                    <label>
+                        Priority
+                    </label>
+
+                    <select name="priority">
+
+                        <option value="">
+                            All Priority
+                        </option>
+
+                        <option value="Low"
+                            {% if priority == "Low" %}
+                            selected
+                            {% endif %}>
+                            Low
+                        </option>
+
+                        <option value="Medium"
+                            {% if priority == "Medium" %}
+                            selected
+                            {% endif %}>
+                            Medium
+                        </option>
+
+                        <option value="High"
+                            {% if priority == "High" %}
+                            selected
+                            {% endif %}>
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="student-filter-buttons">
+
+                    <button type="submit"
+                            class="student-search-btn">
+
+                        🔎 Search
+
+                    </button>
+
+                    <a href="/my-complaints"
+                       class="student-reset-btn">
+
+                        🔄 Reset
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- =================================================
+             RESULT COUNT
+             ================================================= -->
+
+        <div class="student-result-info">
+
+            Showing
+
+            <strong>
+                {{ complaints|length }}
+            </strong>
+
+            complaint(s)
+
+        </div>
+
+
+        <!-- =================================================
+             COMPLAINT LIST
+             ================================================= -->
+
+        {% if complaints %}
+
+
+            {% for complaint in complaints %}
+
+            <div class="student-complaint-card">
+
+
+                <!-- TOP SECTION -->
+
+                <div class="student-complaint-top">
+
+                    <div>
+
+                        <span class="student-complaint-number">
+                            Complaint #{{ complaint['id'] }}
+                        </span>
+
+                        <h2>
+                            {{ complaint['title'] }}
+                        </h2>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    {% if complaint['status'] == 'Pending' %}
+
+                    <span class="student-status-badge student-pending">
+                        🟡 Pending
+                    </span>
+
+                    {% elif complaint['status'] == 'In Progress' %}
+
+                    <span class="student-status-badge student-progress">
+                        🔵 In Progress
+                    </span>
+
+                    {% elif complaint['status'] == 'Resolved' %}
+
+                    <span class="student-status-badge student-resolved">
+                        🟢 Resolved
+                    </span>
+
+                    {% else %}
+
+                    <span class="student-status-badge">
+                        {{ complaint['status'] }}
+                    </span>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- =================================================
+                     COMPLAINT INFORMATION
+                     ================================================= -->
+
+                <div class="student-complaint-details">
+
+
+                    <div class="student-detail">
+
+                        <span class="detail-label">
+                            🏷️ Category
+                        </span>
+
+                        <strong>
+                            {{ complaint['category'] }}
+                        </strong>
+
+                    </div>
+
+
+                    <div class="student-detail">
+
+                        <span class="detail-label">
+                            ⚡ Priority
+                        </span>
+
+                        {% if complaint['priority'] == 'High' %}
+
+                        <strong class="priority-high">
+                            🔴 High
+                        </strong>
+
+                        {% elif complaint['priority'] == 'Medium' %}
+
+                        <strong class="priority-medium">
+                            🟠 Medium
+                        </strong>
+
+                        {% else %}
+
+                        <strong class="priority-low">
+                            🟢 Low
+                        </strong>
+
+                        {% endif %}
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- =================================================
+                     DESCRIPTION
+                     ================================================= -->
+
+                <div class="student-description">
+
+                    <span>
+                        Description
+                    </span>
+
+                    <p>
+                        {{ complaint['description'] }}
+                    </p>
+
+                </div>
+
+
+                <!-- =================================================
+                     STATUS MESSAGE
+                     ================================================= -->
+
+                <div class="student-status-message">
+
+
+                    {% if complaint['status'] == 'Pending' %}
+
+                    <span>
+                        ⏳ Your complaint is waiting for review by the administrator.
+                    </span>
+
+
+                    {% elif complaint['status'] == 'In Progress' %}
+
+                    <span>
+                        🔧 Your complaint is currently being handled by the administrator.
+                    </span>
+
+
+                    {% elif complaint['status'] == 'Resolved' %}
+
+                    <span>
+                        ✅ Your complaint has been resolved.
+                    </span>
+
+
+                    {% endif %}
+
+                </div>
+
+
+            </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <!-- =================================================
+                 NO COMPLAINTS
+                 ================================================= -->
+
+            <div class="student-no-complaints">
+
+                <div class="student-no-icon">
+                    📭
+                </div>
+
+                <h2>
+                    No Complaints Found
+                </h2>
+
+                <p>
+                    {% if search or status or priority %}
+
+                    No complaints match your current filters.
+
+                    {% else %}
+
+                    You haven't submitted any complaints yet.
+
+                    {% endif %}
+                </p>
+
+
+                {% if search or status or priority %}
+
+                <a href="/my-complaints"
+                   class="student-reset-btn">
+
+                    View All Complaints
+
+                </a>
+
+                {% else %}
+
+                <a href="/submit-complaint"
+                   class="student-submit-btn">
+
+                    ➕ Submit Your First Complaint
+
+                </a>
+
+                {% endif %}
+
+            </div>
+
+
+        {% endif %}
+
+
+    </main>
+
+
+</body>
+
+</html>

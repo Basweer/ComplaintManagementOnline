@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Complaint | Student Complaint System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="complaint-page">
+
+    <!-- Navigation -->
+
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🎓 Student Complaint System
+        </div>
+
+        <div class="dashboard-user">
+
+            <a href="/dashboard" class="back-btn">
+                ← Dashboard
+            </a>
+
+            <a href="/logout" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main -->
+
+    <main class="complaint-container">
+
+        <div class="complaint-card">
+
+            <!-- Header -->
+
+            <div class="complaint-header">
+
+                <div class="complaint-icon">
+                    📝
+                </div>
+
+                <h1>Submit a Complaint</h1>
+
+                <p>
+                    We are here to help. Tell us about the issue you're facing.
+                </p>
+
+            </div>
+
+
+            <!-- Form -->
+
+            <form method="POST" class="complaint-form">
+
+
+                <!-- Complaint Title -->
+
+                <div class="form-group">
+
+                    <label for="title">
+                        Complaint Title
+                    </label>
+
+                    <div class="complaint-input">
+
+                        <span>📌</span>
+
+                        <input
+                            type="text"
+                            id="title"
+                            name="title"
+                            placeholder="e.g. Wi-Fi not working"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- Category -->
+
+                <div class="form-group">
+
+                    <label for="category">
+                        Category
+                    </label>
+
+                    <div class="complaint-input">
+
+                        <span>📂</span>
+
+                        <select
+                            id="category"
+                            name="category"
+                            required
+                        >
+
+                            <option value="" disabled selected>
+                                Select complaint category
+                            </option>
+
+                            <option value="Academic">
+                                📚 Academic
+                            </option>
+
+                            <option value="Infrastructure">
+                                🏢 Infrastructure
+                            </option>
+
+                            <option value="Hostel">
+                                🏠 Hostel
+                            </option>
+
+                            <option value="Transport">
+                                🚌 Transport
+                            </option>
+
+                            <option value="Library">
+                                📖 Library
+                            </option>
+
+                            <option value="Other">
+                                📌 Other
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Priority -->
+
+                <div class="form-group">
+
+                    <label for="priority">
+                        Priority Level
+                    </label>
+
+                    <div class="complaint-input">
+
+                        <span>⚡</span>
+
+                        <select
+                            id="priority"
+                            name="priority"
+                            required
+                        >
+
+                            <option value="" disabled selected>
+                                Select priority
+                            </option>
+
+                            <option value="Low">
+                                🟢 Low
+                            </option>
+
+                            <option value="Medium">
+                                🟡 Medium
+                            </option>
+
+                            <option value="High">
+                                🔴 High
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="form-group">
+
+                    <label for="description">
+                        Complaint Description
+                    </label>
+
+                    <div class="description-box">
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="6"
+                            placeholder="Please explain your complaint clearly..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                    <div class="character-info">
+                        Please provide enough details so we can resolve the issue quickly.
+                    </div>
+
+                </div>
+
+
+                <!-- Submit -->
+
+                <button
+                    type="submit"
+                    class="complaint-submit-btn"
+                >
+
+                    <span>📨</span>
+
+                    Submit Complaint
+
+                    <span>→</span>
+
+                </button>
+
+
+                <!-- Cancel -->
+
+                <a
+                    href="/dashboard"
+                    class="cancel-complaint"
+                >
+                    Cancel
+                </a>
+
+
+            </form>
+
+        </div>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer class="dashboard-footer">
+
+        © 2026 Student Complaint Management System
+
+    </footer>
+
+</body>
+
+</html>

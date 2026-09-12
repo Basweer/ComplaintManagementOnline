@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Manage Complaints</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ Admin Panel
+        </div>
+
+        <div class="nav-links">
+
+            <a href="/admin-dashboard">
+                Dashboard
+            </a>
+
+            <a href="/admin-complaints"
+               class="active">
+                Complaints
+            </a>
+
+            <a href="/admin-logout"
+               class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ================= MAIN CONTENT ================= -->
+
+    <main class="dashboard-container">
+
+
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <h1>
+                Manage Complaints
+            </h1>
+
+            <p>
+                Search, filter and manage student complaints
+            </p>
+
+        </div>
+
+
+        <!-- ================= SEARCH & FILTER ================= -->
+
+        <div class="filter-card">
+
+            <form method="GET"
+                  action="/admin-complaints"
+                  class="filter-form">
+
+
+                <!-- SEARCH -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Search
+                    </label>
+
+                    <input
+                        type="text"
+                        name="search"
+                        placeholder="Title, student name or email"
+                        value="{{ search }}"
+                    >
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select name="status">
+
+                        <option value="">
+                            All Status
+                        </option>
+
+                        <option value="Pending"
+                            {% if status == "Pending" %}selected{% endif %}>
+                            Pending
+                        </option>
+
+                        <option value="In Progress"
+                            {% if status == "In Progress" %}selected{% endif %}>
+                            In Progress
+                        </option>
+
+                        <option value="Resolved"
+                            {% if status == "Resolved" %}selected{% endif %}>
+                            Resolved
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- PRIORITY -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Priority
+                    </label>
+
+                    <select name="priority">
+
+                        <option value="">
+                            All Priority
+                        </option>
+
+                        <option value="Low"
+                            {% if priority == "Low" %}selected{% endif %}>
+                            Low
+                        </option>
+
+                        <option value="Medium"
+                            {% if priority == "Medium" %}selected{% endif %}>
+                            Medium
+                        </option>
+
+                        <option value="High"
+                            {% if priority == "High" %}selected{% endif %}>
+                            High
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- CATEGORY -->
+
+                <div class="filter-group">
+
+                    <label>
+                        Category
+                    </label>
+
+                    <select name="category">
+
+                        <option value="">
+                            All Categories
+                        </option>
+
+                        {% for item in categories %}
+
+                        <option
+                            value="{{ item['category'] }}"
+                            {% if category == item['category'] %}
+                            selected
+                            {% endif %}
+                        >
+
+                            {{ item['category'] }}
+
+                        </option>
+
+                        {% endfor %}
+
+                    </select>
+
+                </div>
+
+
+                <!-- BUTTONS -->
+
+                <div class="filter-buttons">
+
+                    <button type="submit"
+                            class="search-btn">
+
+                        🔎 Search
+
+                    </button>
+
+                    <a href="/admin-complaints"
+                       class="reset-btn">
+
+                        🔄 Reset
+
+                    </a>
+
+                </div>
+
+            </form>
+
+        </div>
+
+
+        <!-- ================= RESULT COUNT ================= -->
+
+        <div class="result-info">
+
+            <strong>
+                {{ complaints|length }}
+            </strong>
+
+            complaint(s) found
+
+        </div>
+
+
+        <!-- ================= COMPLAINTS ================= -->
+
+        {% if complaints %}
+
+
+            {% for complaint in complaints %}
+
+            <div class="complaint-card">
+
+
+                <!-- Complaint Header -->
+
+                <div class="complaint-header">
+
+                    <div>
+
+                        <span class="complaint-number">
+                            Complaint #{{ complaint['id'] }}
+                        </span>
+
+                        <h2>
+                            {{ complaint['title'] }}
+                        </h2>
+
+                    </div>
+
+
+                    <!-- STATUS -->
+
+                    {% if complaint['status'] == 'Pending' %}
+
+                    <span class="status-badge pending">
+                        Pending
+                    </span>
+
+                    {% elif complaint['status'] == 'In Progress' %}
+
+                    <span class="status-badge progress">
+                        In Progress
+                    </span>
+
+                    {% else %}
+
+                    <span class="status-badge resolved">
+                        Resolved
+                    </span>
+
+                    {% endif %}
+
+                </div>
+
+
+                <!-- Student -->
+
+                <div class="complaint-info">
+
+                    <p>
+                        <strong>👤 Student:</strong>
+                        {{ complaint['name'] }}
+                    </p>
+
+                    <p>
+                        <strong>📧 Email:</strong>
+                        {{ complaint['email'] }}
+                    </p>
+
+                    <p>
+                        <strong>🏷️ Category:</strong>
+                        {{ complaint['category'] }}
+                    </p>
+
+                    <p>
+                        <strong>⚡ Priority:</strong>
+                        {{ complaint['priority'] }}
+                    </p>
+
+                </div>
+
+
+                <!-- Description -->
+
+                <div class="description-box">
+
+                    <strong>
+                        Description
+                    </strong>
+
+                    <p>
+                        {{ complaint['description'] }}
+                    </p>
+
+                </div>
+
+
+                <!-- STATUS UPDATE -->
+
+                <div class="status-section">
+
+                    <strong>
+                        Update Status
+                    </strong>
+
+
+                    <form
+                        method="POST"
+                        action="/update-status/{{ complaint['id'] }}"
+                        class="status-form"
+                    >
+
+                        <select name="status">
+
+                            <option value="Pending"
+                                {% if complaint['status'] == 'Pending' %}
+                                selected
+                                {% endif %}>
+                                Pending
+                            </option>
+
+                            <option value="In Progress"
+                                {% if complaint['status'] == 'In Progress' %}
+                                selected
+                                {% endif %}>
+                                In Progress
+                            </option>
+
+                            <option value="Resolved"
+                                {% if complaint['status'] == 'Resolved' %}
+                                selected
+                                {% endif %}>
+                                Resolved
+                            </option>
+
+                        </select>
+
+
+                        <button type="submit">
+                            Update Status
+                        </button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+
+        {% else %}
+
+
+            <!-- NO RESULTS -->
+
+            <div class="no-complaints">
+
+                <div class="no-complaints-icon">
+                    🔍
+                </div>
+
+                <h2>
+                    No Complaints Found
+                </h2>
+
+                <p>
+                    Try changing your search or filter options.
+                </p>
+
+                <a href="/admin-complaints"
+                   class="reset-btn">
+
+                    View All Complaints
+
+                </a>
+
+            </div>
+
+
+        {% endif %}
+
+    </main>
+
+</body>
+
+</html>

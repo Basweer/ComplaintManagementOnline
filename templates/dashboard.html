@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard | Complaint System</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body class="dashboard-page">
+
+    <!-- Navigation -->
+
+    <nav class="dashboard-navbar">
+
+        <div class="dashboard-logo">
+            🎓 Student Complaint System
+        </div>
+
+        <div class="dashboard-user">
+
+            <span>Welcome, {{ user['name'] }}</span>
+
+            <a href="/logout" class="logout-btn">
+                Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Dashboard -->
+
+    <main class="dashboard-container">
+
+        <!-- Welcome -->
+
+        <div class="dashboard-welcome">
+
+            <h1>
+                Welcome back, {{ user['name'] }} 👋
+            </h1>
+
+            <p>
+                Manage your complaints and track their progress.
+            </p>
+
+        </div>
+
+
+        <!-- Statistics -->
+
+        <div class="stats-container">
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    📋
+                </div>
+
+                <div>
+                    <h3>{{ total_complaints }}</h3>
+                    <p>Total Complaints</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ⏳
+                </div>
+
+                <div>
+                    <h3>{{ pending_complaints }}</h3>
+                    <p>Pending</p>
+                </div>
+
+            </div>
+
+
+            <div class="stat-card">
+
+                <div class="stat-icon">
+                    ✅
+                </div>
+
+                <div>
+                    <h3>{{ resolved_complaints }}</h3>
+                    <p>Resolved</p>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Quick Actions -->
+
+        <div class="dashboard-actions">
+
+            <h2>Quick Actions</h2>
+
+            <div class="action-grid">
+
+                <a href="/submit-complaint" class="action-card">
+
+                    <span>📝</span>
+
+                    <h3>Submit Complaint</h3>
+
+                    <p>
+                        Report a new issue
+                    </p>
+
+                </a>
+
+
+                <a href="/my-complaints" class="action-card">
+
+                    <span>📋</span>
+
+                    <h3>My Complaints</h3>
+
+                    <p>
+                        View your complaints
+                    </p>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <footer class="dashboard-footer">
+
+        © 2026 Student Complaint Management System
+
+    </footer>
+
+</body>
+
+</html>

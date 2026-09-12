@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Student Management</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVBAR
+         ===================================================== -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🛡️ Admin Panel
+        </div>
+
+
+        <div class="nav-links">
+
+            <a href="/admin-dashboard">
+                Dashboard
+            </a>
+
+            <a href="/admin-complaints">
+                Complaints
+            </a>
+
+            <a href="/admin-students"
+               class="active">
+                Students
+            </a>
+
+            <a href="/admin-logout"
+               class="logout-btn">
+                🚪 Logout
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- =====================================================
+         MAIN
+         ===================================================== -->
+
+    <main class="dashboard-container">
+
+
+        <!-- HEADER -->
+
+        <div class="dashboard-header">
+
+            <h1>
+                Student Management
+            </h1>
+
+            <p>
+                View registered students and their complaint activity.
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SEARCH
+             ================================================= -->
+
+        <div class="student-management-filter">
+
+            <form method="GET"
+                  action="/admin-students"
+                  class="student-management-search">
+
+                <input
+                    type="text"
+                    name="search"
+                    value="{{ search }}"
+                    placeholder="🔎 Search by student name or email"
+                >
+
+                <button type="submit">
+                    Search
+                </button>
+
+                <a href="/admin-students">
+                    Reset
+                </a>
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================================
+             RESULT COUNT
+             ================================================= -->
+
+        <div class="student-management-count">
+
+            <strong>
+                {{ students|length }}
+            </strong>
+
+            student(s) found
+
+        </div>
+
+
+
+        <!-- =================================================
+             STUDENT LIST
+             ================================================= -->
+
+        {% if students %}
+
+
+            <div class="student-table-wrapper">
+
+                <table class="student-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                ID
+                            </th>
+
+                            <th>
+                                Student
+                            </th>
+
+                            <th>
+                                Email
+                            </th>
+
+                            <th>
+                                Complaints
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+                        {% for student in students %}
+
+                        <tr>
+
+                            <!-- ID -->
+
+                            <td data-label="ID">
+
+                                #{{ student['id'] }}
+
+                            </td>
+
+
+                            <!-- NAME -->
+
+                            <td data-label="Student">
+
+                                <div class="student-name">
+    <strong>
+        {{ student['name'] }}
+    </strong>
+</div>
+                            </td>
+
+
+                            <!-- EMAIL -->
+
+                            <td data-label="Email">
+
+                                {{ student['email'] }}
+
+                            </td>
+
+
+                            <!-- COMPLAINT COUNT -->
+
+                            <td data-label="Complaints">
+
+                                <span class="complaint-count">
+
+                                    {{ student['complaint_count'] }}
+
+                                </span>
+
+                            </td>
+
+
+                            <!-- ACTION -->
+
+                            <td data-label="Action">
+
+                                <a
+                                    href="/admin-complaints?search={{ student['name'] }}"
+                                    class="view-complaints-btn"
+                                >
+
+                                    👁️ View Complaints
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                        {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        {% else %}
+
+
+            <!-- NO STUDENTS -->
+
+            <div class="student-management-empty">
+
+                <div>
+                    👥
+                </div>
+
+                <h2>
+                    No Students Found
+                </h2>
+
+                <p>
+                    No students match your search.
+                </p>
+
+                <a href="/admin-students">
+                    View All Students
+                </a>
+
+            </div>
+
+
+        {% endif %}
+
+
+    </main>
+
+
+</body>
+
+</html>
